@@ -69,8 +69,9 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="eGy-Yk-qZ3" secondAttribute="bottom" constant="2" id="xxq-sy-ReD"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="imageVw" destination="pCm-57-zEN" id="5oP-oX-sp2"/>
-                                    <outlet property="lbl" destination="eGy-Yk-qZ3" id="bYI-HV-51P"/>
+                                    <outlet property="imageVw" destination="pCm-57-zEN" id="GZg-Xu-Pai"/>
+                                    <outlet property="lbl" destination="eGy-Yk-qZ3" id="EfY-OJ-BhA"/>
+                                    <segue destination="ohA-3o-KqY" kind="show" identifier="MapVwIdentifier" id="pD9-81-8su"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -86,6 +87,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLy-jr-gN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-85" y="1008"/>
+        </scene>
+        <!--Car Park Vw Controller-->
+        <scene sceneID="Xvk-gS-Wt0">
+            <objects>
+                <viewController id="ohA-3o-KqY" customClass="ONDUCarParkVwController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LGX-Ch-UTx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oei-68-gdb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O9D-X5-yqB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j5I-ld-LYN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="j5I-ld-LYN" secondAttribute="trailing" id="4TP-I9-GQQ"/>
+                            <constraint firstItem="j5I-ld-LYN" firstAttribute="leading" secondItem="O9D-X5-yqB" secondAttribute="leading" id="lWx-8s-8Es"/>
+                            <constraint firstItem="j5I-ld-LYN" firstAttribute="bottom" secondItem="Oei-68-gdb" secondAttribute="top" id="tbF-ui-Wvj"/>
+                            <constraint firstItem="j5I-ld-LYN" firstAttribute="top" secondItem="O9D-X5-yqB" secondAttribute="top" id="wD2-In-43t"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zAh-6h-nuq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660" y="1044"/>
         </scene>
     </scenes>
 </document>

@@ -25,9 +25,11 @@ static NSString * const reuseIdentifier = @"Cell";
     self.utilities = @[@"Car Parking",@"Parking Meter",@"OnDrive SMS",@"OnDrive Call",@"Utilities",@"Settings"];
     self.navigationController.toolbarHidden = NO;
     self.navigationController.toolbar.barTintColor = [UIColor greenColor];
-    // Register cell classes
-//    [self.collectionView registerClass:[ONDUCollViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9727369C1CE930620066F61E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9727369B1CE930620066F61E /* MapKit.framework */; };
+		972736A11CE9332A0066F61E /* ONDUCarParkVwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972736A01CE9332A0066F61E /* ONDUCarParkVwController.m */; };
+		972736A81CE9366E0066F61E /* UINavigationController+LeftBtnItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 972736A71CE9366E0066F61E /* UINavigationController+LeftBtnItem.m */; };
 		978F3F311CE90357004C3DD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F301CE90357004C3DD7 /* main.m */; };
 		978F3F341CE90357004C3DD7 /* ONDUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F331CE90357004C3DD7 /* ONDUAppDelegate.m */; };
 		978F3F371CE90357004C3DD7 /* ONDUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F361CE90357004C3DD7 /* ONDUViewController.m */; };
@@ -37,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9727369B1CE930620066F61E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9727369F1CE9332A0066F61E /* ONDUCarParkVwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUCarParkVwController.h; sourceTree = "<group>"; };
+		972736A01CE9332A0066F61E /* ONDUCarParkVwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUCarParkVwController.m; sourceTree = "<group>"; };
+		972736A61CE9366E0066F61E /* UINavigationController+LeftBtnItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+LeftBtnItem.h"; sourceTree = "<group>"; };
+		972736A71CE9366E0066F61E /* UINavigationController+LeftBtnItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+LeftBtnItem.m"; sourceTree = "<group>"; };
 		978F3F2C1CE90357004C3DD7 /* OnDriveUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnDriveUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		978F3F301CE90357004C3DD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		978F3F321CE90357004C3DD7 /* ONDUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONDUAppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9727369C1CE930620066F61E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +93,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9727369D1CE930FD0066F61E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9727369B1CE930620066F61E /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9727369E1CE932E10066F61E /* CarParking */ = {
+			isa = PBXGroup;
+			children = (
+				9727369F1CE9332A0066F61E /* ONDUCarParkVwController.h */,
+				972736A01CE9332A0066F61E /* ONDUCarParkVwController.m */,
+			);
+			name = CarParking;
+			sourceTree = "<group>";
+		};
+		972736A21CE935840066F61E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				972736A61CE9366E0066F61E /* UINavigationController+LeftBtnItem.h */,
+				972736A71CE9366E0066F61E /* UINavigationController+LeftBtnItem.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		978F3F231CE90357004C3DD7 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +126,7 @@
 				978F3F481CE90357004C3DD7 /* OnDriveUtilitiesTests */,
 				978F3F531CE90357004C3DD7 /* OnDriveUtilitiesUITests */,
 				978F3F2D1CE90357004C3DD7 /* Products */,
+				9727369D1CE930FD0066F61E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +143,8 @@
 		978F3F2E1CE90357004C3DD7 /* OnDriveUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				972736A21CE935840066F61E /* Category */,
+				9727369E1CE932E10066F61E /* CarParking */,
 				978F3F321CE90357004C3DD7 /* ONDUAppDelegate.h */,
 				978F3F331CE90357004C3DD7 /* ONDUAppDelegate.m */,
 				978F3F351CE90357004C3DD7 /* ONDUViewController.h */,
@@ -217,6 +255,11 @@
 				TargetAttributes = {
 					978F3F2B1CE90357004C3DD7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					978F3F441CE90357004C3DD7 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -285,6 +328,8 @@
 				978F3F341CE90357004C3DD7 /* ONDUAppDelegate.m in Sources */,
 				978F3F641CE90F20004C3DD7 /* ONDUCollViewController.m in Sources */,
 				978F3F311CE90357004C3DD7 /* main.m in Sources */,
+				972736A81CE9366E0066F61E /* UINavigationController+LeftBtnItem.m in Sources */,
+				972736A11CE9332A0066F61E /* ONDUCarParkVwController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

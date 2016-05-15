@@ -10,9 +10,7 @@
 
 @interface ONDUCollViewCell : UICollectionViewCell
 
-//@property (nonatomic,weak) IBOutlet UIImageView *imageVw;
-//@property (nonatomic,weak) IBOutlet UILabel *lbl;
-@property (nonatomic,weak)  UIImageView *imageVw;
-@property (nonatomic,weak)  UILabel *lbl;
+@property (nonatomic,weak) IBOutlet UIImageView *imageVw;
+@property (nonatomic,weak) IBOutlet UILabel *lbl;
 
 @end
