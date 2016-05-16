@@ -10,6 +10,9 @@
 		9727369C1CE930620066F61E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9727369B1CE930620066F61E /* MapKit.framework */; };
 		972736A11CE9332A0066F61E /* ONDUCarParkVwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972736A01CE9332A0066F61E /* ONDUCarParkVwController.m */; };
 		972736A81CE9366E0066F61E /* UINavigationController+LeftBtnItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 972736A71CE9366E0066F61E /* UINavigationController+LeftBtnItem.m */; };
+		972736AA1CE951FC0066F61E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972736A91CE951FC0066F61E /* CoreLocation.framework */; };
+		972736AD1CE957F60066F61E /* ONDUMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 972736AC1CE957F60066F61E /* ONDUMapAnnotation.m */; };
+		972736AF1CE958B70066F61E /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972736AE1CE958B70066F61E /* Contacts.framework */; };
 		978F3F311CE90357004C3DD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F301CE90357004C3DD7 /* main.m */; };
 		978F3F341CE90357004C3DD7 /* ONDUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F331CE90357004C3DD7 /* ONDUAppDelegate.m */; };
 		978F3F371CE90357004C3DD7 /* ONDUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F361CE90357004C3DD7 /* ONDUViewController.m */; };
@@ -45,6 +48,11 @@
 		972736A01CE9332A0066F61E /* ONDUCarParkVwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUCarParkVwController.m; sourceTree = "<group>"; };
 		972736A61CE9366E0066F61E /* UINavigationController+LeftBtnItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+LeftBtnItem.h"; sourceTree = "<group>"; };
 		972736A71CE9366E0066F61E /* UINavigationController+LeftBtnItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+LeftBtnItem.m"; sourceTree = "<group>"; };
+		972736A91CE951FC0066F61E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		972736AB1CE957F60066F61E /* ONDUMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUMapAnnotation.h; sourceTree = "<group>"; };
+		972736AC1CE957F60066F61E /* ONDUMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUMapAnnotation.m; sourceTree = "<group>"; };
+		972736AE1CE958B70066F61E /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		972736B01CE98AA90066F61E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		978F3F2C1CE90357004C3DD7 /* OnDriveUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnDriveUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		978F3F301CE90357004C3DD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		978F3F321CE90357004C3DD7 /* ONDUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONDUAppDelegate.h; sourceTree = "<group>"; };
@@ -72,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				972736AF1CE958B70066F61E /* Contacts.framework in Frameworks */,
+				972736AA1CE951FC0066F61E /* CoreLocation.framework in Frameworks */,
 				9727369C1CE930620066F61E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +106,9 @@
 		9727369D1CE930FD0066F61E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				972736B01CE98AA90066F61E /* AddressBook.framework */,
+				972736AE1CE958B70066F61E /* Contacts.framework */,
+				972736A91CE951FC0066F61E /* CoreLocation.framework */,
 				9727369B1CE930620066F61E /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -106,6 +119,8 @@
 			children = (
 				9727369F1CE9332A0066F61E /* ONDUCarParkVwController.h */,
 				972736A01CE9332A0066F61E /* ONDUCarParkVwController.m */,
+				972736AB1CE957F60066F61E /* ONDUMapAnnotation.h */,
+				972736AC1CE957F60066F61E /* ONDUMapAnnotation.m */,
 			);
 			name = CarParking;
 			sourceTree = "<group>";
@@ -328,6 +343,7 @@
 				978F3F341CE90357004C3DD7 /* ONDUAppDelegate.m in Sources */,
 				978F3F641CE90F20004C3DD7 /* ONDUCollViewController.m in Sources */,
 				978F3F311CE90357004C3DD7 /* main.m in Sources */,
+				972736AD1CE957F60066F61E /* ONDUMapAnnotation.m in Sources */,
 				972736A81CE9366E0066F61E /* UINavigationController+LeftBtnItem.m in Sources */,
 				972736A11CE9332A0066F61E /* ONDUCarParkVwController.m in Sources */,
 			);
