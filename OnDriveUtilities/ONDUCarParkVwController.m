@@ -20,9 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.toolbarHidden = YES;
-    [self.navigationController changeBackButtonItem:@"Car Parking"];
+    [self.navigationController changeBackButtonItem:nil];
+    self.navigationItem.title = @"Car Parking";
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+//    self.navigationItem.rightBarButtonItem = self.editButtonItem;
     CLLocation *location = [[self trackUpdatedLocation]location];
-    
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemark, NSError *error)
      {
@@ -32,7 +35,6 @@
              return;
          }
          CLPlacemark *mark = placemark[0];
-         
          [self centerMapeOnLocation:location];
          MKPlacemark *placeMk = [[MKPlacemark alloc]initWithPlacemark:mark];
          [self.map addAnnotation:placeMk];
@@ -59,6 +61,10 @@
     CLLocationDistance regionRadius = 1000;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0);
     [self.map setRegion:region];
+}
+
+-(void)insertNewObject:(id)sender{
+    
 }
 
 @end

@@ -71,7 +71,7 @@
                                 <connections>
                                     <outlet property="imageVw" destination="pCm-57-zEN" id="GZg-Xu-Pai"/>
                                     <outlet property="lbl" destination="eGy-Yk-qZ3" id="EfY-OJ-BhA"/>
-                                    <segue destination="ohA-3o-KqY" kind="show" identifier="MapVwIdentifier" id="pD9-81-8su"/>
+                                    <segue destination="ohA-3o-KqY" kind="show" id="dKc-gf-V7l"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -101,15 +101,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j5I-ld-LYN">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="261" width="600" height="295"/>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v0M-CF-Qlj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="197"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="trailing" secondItem="j5I-ld-LYN" secondAttribute="trailing" id="41H-eR-KMy"/>
                             <constraint firstAttribute="trailing" secondItem="j5I-ld-LYN" secondAttribute="trailing" id="4TP-I9-GQQ"/>
+                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="leading" secondItem="j5I-ld-LYN" secondAttribute="leading" id="5Qf-GZ-ctA"/>
+                            <constraint firstItem="Oei-68-gdb" firstAttribute="top" secondItem="v0M-CF-Qlj" secondAttribute="bottom" constant="295" id="l0f-cf-KrM"/>
                             <constraint firstItem="j5I-ld-LYN" firstAttribute="leading" secondItem="O9D-X5-yqB" secondAttribute="leading" id="lWx-8s-8Es"/>
+                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="top" secondItem="LGX-Ch-UTx" secondAttribute="bottom" id="mSe-Vg-Yob"/>
                             <constraint firstItem="j5I-ld-LYN" firstAttribute="bottom" secondItem="Oei-68-gdb" secondAttribute="top" id="tbF-ui-Wvj"/>
-                            <constraint firstItem="j5I-ld-LYN" firstAttribute="top" secondItem="O9D-X5-yqB" secondAttribute="top" id="wD2-In-43t"/>
+                            <constraint firstItem="j5I-ld-LYN" firstAttribute="top" secondItem="O9D-X5-yqB" secondAttribute="top" constant="261" id="wD2-In-43t"/>
                         </constraints>
                     </view>
                     <connections>

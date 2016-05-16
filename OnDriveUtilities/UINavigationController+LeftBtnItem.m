@@ -18,7 +18,7 @@
     if (viewControllerArr.count) {
         previous = [viewControllerArr objectAtIndex:0];
         UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]
-                                    initWithTitle:title
+                                    initWithTitle:@""
                                     style:UIBarButtonItemStylePlain
                                     target:self
                                     action:nil];
