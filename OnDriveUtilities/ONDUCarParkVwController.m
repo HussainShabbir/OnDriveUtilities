@@ -13,6 +13,9 @@
 
 @interface ONDUCarParkVwController ()
 @property (nonatomic,strong) CLLocationManager *locationManager;
+@property (nonatomic,strong) MKPlacemark *placeMk;
+@property (nonatomic,strong) NSMutableArray *locations;
+@property (nonatomic,strong) NSString *location;
 @end
 
 @implementation ONDUCarParkVwController
@@ -24,8 +27,43 @@
     self.navigationItem.title = @"Car Parking";
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    self.map.delegate =  self;
+//    self.map.showsUserLocation = YES;
+    if ([CLLocationManager locationServicesEnabled] )
+    {
+        if (self.locationManager == nil )
+        {
+            self.locationManager = [[CLLocationManager alloc] init];
+            [self.locationManager requestWhenInUseAuthorization];
+            self.locationManager.delegate = self;
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+            self.locationManager.distanceFilter = kCLDistanceFilterNone;// kDistanceFilter;
+        }
+        
+        [self.locationManager startUpdatingLocation];
+    }
+    else{
+        
+    }
 //    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    CLLocation *location = [[self trackUpdatedLocation]location];
+//    CLLocation *location = [[self trackUpdatedLocation]location];
+//    [self updateLocation:location];
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(foundTap:)];
+    tapRecognizer.numberOfTapsRequired = 1;
+    tapRecognizer.numberOfTouchesRequired = 1;
+    [self.map addGestureRecognizer:tapRecognizer];
+    // Do any additional setup after loading the view.
+}
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.locationManager stopUpdatingHeading];
+    CLLocation *location = [locations lastObject];
+    [self centerMapeOnLocation:location];
+    // here we get the current location
+}
+
+-(void)updateLocation:(CLLocation*)location
+{
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemark, NSError *error)
      {
@@ -36,11 +74,22 @@
          }
          CLPlacemark *mark = placemark[0];
          [self centerMapeOnLocation:location];
-         MKPlacemark *placeMk = [[MKPlacemark alloc]initWithPlacemark:mark];
-         [self.map addAnnotation:placeMk];
-     }];
+         self.placeMk = [[MKPlacemark alloc]initWithPlacemark:mark];
+         self.location = self.placeMk.title;
+         [self.map addAnnotation:_placeMk];
 
-    // Do any additional setup after loading the view.
+     }];
+}
+
+-(void)foundTap:(UITapGestureRecognizer *)recognizer {
+    [self.map removeAnnotation:_placeMk];
+    CGPoint point = [recognizer locationInView:_map];
+    CLLocationCoordinate2D tapPoint = [self.map convertPoint:point toCoordinateFromView:_map];
+    MKPointAnnotation *point1 = [[MKPointAnnotation alloc] init];
+    point1.coordinate = tapPoint;
+//    [self.map addAnnotation:point1];
+//    CLLocation *location = [[CLLocation alloc]initWithCoordinate:tapPoint altitude:CLLocationDistanceMax horizontalAccuracy:kCLLocationAccuracyBestForNavigation verticalAccuracy:kCLLocationAccuracyBestForNavigation timestamp:[NSDate date]];
+//    [self updateLocation:location];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +112,8 @@
     [self.map setRegion:region];
 }
 
--(void)insertNewObject:(id)sender{
+-(void)insertNewObject:(id)sender
+{
     
 }
 
