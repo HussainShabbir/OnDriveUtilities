@@ -9,6 +9,12 @@
 #import "ONDUCollViewController.h"
 #import "ONDUCollViewCell.h"
 
+
+typedef enum : NSInteger {
+    kCarParking = 0,
+    kPArkingTimer,
+} OnDriveEnumTypes;
+
 @interface ONDUCollViewController ()
 @property (nonatomic,strong) NSArray * utilities;
 @end
@@ -24,7 +30,7 @@ static NSString * const reuseIdentifier = @"Cell";
      self.clearsSelectionOnViewWillAppear = NO;
     self.utilities = @[@"Car Parking",@"Parking Meter",@"OnDrive SMS",@"OnDrive Call",@"Utilities",@"Settings"];
     self.navigationController.toolbarHidden = NO;
-    self.navigationController.toolbar.barTintColor = [UIColor greenColor];
+    self.navigationController.toolbar.barTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -37,15 +43,16 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -60,11 +67,10 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ONDUCollViewCell *cell = (ONDUCollViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor greenColor];
     cell.lbl.text = self.utilities[indexPath.row];
     cell.layer.borderWidth=1.0f;
     cell.layer.cornerRadius = 5.0f;
-    cell.layer.borderColor=[UIColor greenColor].CGColor;
+    cell.layer.borderColor=[UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f].CGColor;
     // Configure the cell
     return cell;
 }
@@ -99,5 +105,20 @@ static NSString * const reuseIdentifier = @"Cell";
 	
 }
 */
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *identifier;
+    switch (indexPath.row) {
+        case kCarParking:
+            identifier = @"CarParkingIdentifier";
+            break;
+        case kPArkingTimer:
+            identifier = @"ParkingTimerIdentifier";
+            break;
+        default:
+            break;
+    }
+    [self performSegueWithIdentifier:identifier sender:self];
+}
 
 @end

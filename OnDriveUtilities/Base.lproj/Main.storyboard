@@ -13,8 +13,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LjC-Md-bmx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0067950606773667932" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.0023150858697955634" green="1" blue="0.0095355935429028982" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.28235294119999998" green="0.67450980390000004" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.2784313725" green="0.59999999999999998" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="lOr-AY-I75" kind="relationship" relationship="rootViewController" id="RfY-4E-wop"/>
@@ -71,7 +71,6 @@
                                 <connections>
                                     <outlet property="imageVw" destination="pCm-57-zEN" id="GZg-Xu-Pai"/>
                                     <outlet property="lbl" destination="eGy-Yk-qZ3" id="EfY-OJ-BhA"/>
-                                    <segue destination="ohA-3o-KqY" kind="show" id="dKc-gf-V7l"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -83,6 +82,10 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="OnDrive Utilities" id="E0N-28-Q1Y"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <segue destination="8uD-PV-rdm" kind="show" identifier="ParkingTimerIdentifier" id="UHE-Wr-q9E"/>
+                        <segue destination="ohA-3o-KqY" kind="show" identifier="CarParkingIdentifier" id="Kyh-QY-RaG"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLy-jr-gN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,6 +164,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAh-6h-nuq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="660" y="1044"/>
+        </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="vps-DQ-wPw">
+            <objects>
+                <viewController id="8uD-PV-rdm" customClass="ONDUTimerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ARB-A7-sqj"/>
+                        <viewControllerLayoutGuide type="bottom" id="FPH-8U-O9Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Sk-GM-epG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="212" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fh5-tc-cu0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="212" id="PZf-AW-N2r">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="212"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PZf-AW-N2r" id="wxd-Ra-lNL">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="211"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="r5K-qD-6ON">
+                                                    <rect key="frame" x="0.0" y="-5" width="600" height="216"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="485167476.91210002">
+                                                        <!--2016-05-17 08:44:36 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="r5K-qD-6ON" secondAttribute="trailing" id="1Cd-HX-tEQ"/>
+                                                <constraint firstItem="r5K-qD-6ON" firstAttribute="leading" secondItem="wxd-Ra-lNL" secondAttribute="leading" id="E0h-yO-xmG"/>
+                                                <constraint firstAttribute="bottom" secondItem="r5K-qD-6ON" secondAttribute="bottom" id="Xio-7t-b5b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Jlz-LC-4vF">
+                                        <rect key="frame" x="0.0" y="304" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jlz-LC-4vF" id="x0V-lA-LYq">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fh5-tc-cu0" secondAttribute="trailing" id="fPh-hW-chw"/>
+                            <constraint firstItem="fh5-tc-cu0" firstAttribute="leading" secondItem="8Sk-GM-epG" secondAttribute="leading" id="k2N-Ko-MLk"/>
+                            <constraint firstItem="fh5-tc-cu0" firstAttribute="bottom" secondItem="FPH-8U-O9Y" secondAttribute="top" id="yCC-ag-Txp"/>
+                            <constraint firstItem="fh5-tc-cu0" firstAttribute="top" secondItem="ARB-A7-sqj" secondAttribute="bottom" id="zjt-PS-JnG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xs7-Lk-oPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="483" y="1699"/>
         </scene>
     </scenes>
 </document>

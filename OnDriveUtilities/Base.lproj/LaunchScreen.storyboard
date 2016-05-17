@@ -16,7 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.00022014580470000001" green="1" blue="0.0028445924000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.27843137254901962" green="0.59999999999999998" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.2784313725" green="0.59999999999999998" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
