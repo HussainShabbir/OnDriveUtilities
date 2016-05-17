@@ -101,30 +101,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j5I-ld-LYN">
-                                <rect key="frame" x="0.0" y="261" width="600" height="295"/>
+                                <rect key="frame" x="0.0" y="310" width="600" height="246"/>
                                 <connections>
                                     <outlet property="delegate" destination="ohA-3o-KqY" id="mFI-fj-A2v"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v0M-CF-Qlj">
-                                <rect key="frame" x="0.0" y="64" width="600" height="197"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="59" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="v0M-CF-Qlj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="246"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="syS-j5-lyW" detailTextLabel="yPe-Qu-muz" rowHeight="59" style="IBUITableViewCellStyleSubtitle" id="3Wz-oF-EXj">
+                                        <rect key="frame" x="0.0" y="50" width="600" height="59"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Wz-oF-EXj" id="Jf0-X7-3WH">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="syS-j5-lyW">
+                                                    <rect key="frame" x="15" y="12" width="32" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yPe-Qu-muz">
+                                                    <rect key="frame" x="15" y="32" width="41" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ohA-3o-KqY" id="gsf-1E-NEy"/>
+                                    <outlet property="delegate" destination="ohA-3o-KqY" id="zmP-RI-KB2"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="trailing" secondItem="j5I-ld-LYN" secondAttribute="trailing" id="41H-eR-KMy"/>
-                            <constraint firstAttribute="trailing" secondItem="j5I-ld-LYN" secondAttribute="trailing" id="4TP-I9-GQQ"/>
-                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="leading" secondItem="j5I-ld-LYN" secondAttribute="leading" id="5Qf-GZ-ctA"/>
-                            <constraint firstItem="Oei-68-gdb" firstAttribute="top" secondItem="v0M-CF-Qlj" secondAttribute="bottom" constant="295" id="l0f-cf-KrM"/>
-                            <constraint firstItem="j5I-ld-LYN" firstAttribute="leading" secondItem="O9D-X5-yqB" secondAttribute="leading" id="lWx-8s-8Es"/>
-                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="top" secondItem="LGX-Ch-UTx" secondAttribute="bottom" id="mSe-Vg-Yob"/>
-                            <constraint firstItem="j5I-ld-LYN" firstAttribute="bottom" secondItem="Oei-68-gdb" secondAttribute="top" id="tbF-ui-Wvj"/>
-                            <constraint firstItem="j5I-ld-LYN" firstAttribute="top" secondItem="O9D-X5-yqB" secondAttribute="top" constant="261" id="wD2-In-43t"/>
+                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="leading" secondItem="O9D-X5-yqB" secondAttribute="leading" id="AwB-80-yap"/>
+                            <constraint firstItem="j5I-ld-LYN" firstAttribute="bottom" secondItem="Oei-68-gdb" secondAttribute="top" id="FcQ-XM-b1g"/>
+                            <constraint firstAttribute="trailing" secondItem="v0M-CF-Qlj" secondAttribute="trailing" id="JgQ-YK-LnO"/>
+                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="top" secondItem="LGX-Ch-UTx" secondAttribute="bottom" id="RxG-b3-Axb"/>
+                            <constraint firstItem="j5I-ld-LYN" firstAttribute="height" secondItem="v0M-CF-Qlj" secondAttribute="height" id="SAe-gT-fEH"/>
+                            <constraint firstItem="j5I-ld-LYN" firstAttribute="top" secondItem="v0M-CF-Qlj" secondAttribute="bottom" id="US5-5P-Y1B"/>
+                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="leading" secondItem="j5I-ld-LYN" secondAttribute="leading" id="Uou-og-mWP"/>
+                            <constraint firstItem="v0M-CF-Qlj" firstAttribute="trailing" secondItem="j5I-ld-LYN" secondAttribute="trailing" id="y7Q-nu-iPK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="map" destination="j5I-ld-LYN" id="ft0-2G-rGJ"/>
+                        <outlet property="tableView" destination="v0M-CF-Qlj" id="ScJ-OM-0AG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAh-6h-nuq" userLabel="First Responder" sceneMemberID="firstResponder"/>

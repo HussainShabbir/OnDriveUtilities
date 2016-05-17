@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MapKit/MapKit.h"
 
-@interface ONDUCarParkVwController : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate>
+@interface ONDUCarParkVwController : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,weak) IBOutlet MKMapView *map;
+
+@property (nonatomic,weak) IBOutlet UITableView *tableView;
 @end

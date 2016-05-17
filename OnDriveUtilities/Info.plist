@@ -37,6 +37,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Turned ON</string>
+	<string>Allow us to access your current location.</string>
 </dict>
 </plist>
