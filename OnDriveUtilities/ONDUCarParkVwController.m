@@ -16,6 +16,7 @@
 @property (nonatomic,strong) MKPlacemark *placeMk;
 @property (nonatomic,strong) NSMutableArray *locations;
 @property (nonatomic,strong) NSString *location;
+@property (nonatomic,strong) NSUserDefaults *userDefaults;
 @end
 
 @implementation ONDUCarParkVwController
@@ -26,6 +27,8 @@
     [self.navigationController changeBackButtonItem:nil];
     self.navigationItem.title = @"Car Parking";
     self.map.delegate =  self;
+    self.userDefaults = [NSUserDefaults standardUserDefaults];
+    self.locations = [[self.userDefaults objectForKey:@"Locations"]mutableCopy];
     if ([CLLocationManager locationServicesEnabled])
     {
         if (self.locationManager == nil )
@@ -94,6 +97,7 @@
     [self.map setRegion:region];
 }
 
+
 -(void)insertNewObject:(id)sender
 {
     BOOL isInsertedObj = NO;
@@ -102,19 +106,20 @@
     }
     if (!self.locations.count){
         if (_location){
-            [self.locations addObject:_location];
             isInsertedObj = YES;
         }
     }
     else{
         for (NSString *loc in _locations){
             if (![loc isEqualToString:_location]){
-                [self.locations addObject:self.location];
                 isInsertedObj = YES;
             }
         }
     }
     if (isInsertedObj){
+        [self.locations addObject:_location];
+        [self.userDefaults setObject:_locations forKey:@"Locations"];
+        [self.userDefaults synchronize];
         [self.tableView beginUpdates];
         [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
         [self.tableView endUpdates];
@@ -148,7 +153,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    MKMapItem *mapItem = [[MKMapItem alloc]initWithPlacemark:self.placeMk];
+    [MKMapItem openMapsWithItems:@[mapItem] launchOptions:@{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking,MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeTransit}];
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -156,8 +162,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.locations.count > indexPath.row){
+    if (self.locations.count > indexPath.row)
+    {
         [self.locations removeObjectAtIndex:indexPath.row];
+        [self.userDefaults removeObjectForKey:@"Locations"];
+        [self.userDefaults synchronize];
     }
     [self.tableView beginUpdates];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
