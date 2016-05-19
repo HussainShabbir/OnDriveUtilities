@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.toolbarHidden = YES;
-    [self.navigationController changeBackButtonItem:nil];
+    [self.navigationController changeBackButtonItem:nil withCurrentObject:self];
     self.navigationItem.title = @"Car Parking";
     self.map.delegate =  self;
     self.userDefaults = [NSUserDefaults standardUserDefaults];
@@ -97,9 +97,11 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [btn addTarget:self action:@selector(insertNewObject:) forControlEvents:UIControlEventTouchUpInside];
     pinView.canShowCallout = YES;
-    btn.tintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f];
+//    btn.tintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f];
+    btn.tintColor = [UIColor darkTextColor];
     pinView.rightCalloutAccessoryView = btn;
-    pinView.pinTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f];//[MKPinAnnotationView greenPinColor];
+//    pinView.pinTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f];//[MKPinAnnotationView greenPinColor];
+    pinView.pinTintColor = [UIColor darkTextColor];
     return pinView;
 }
 

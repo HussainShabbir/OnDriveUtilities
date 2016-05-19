@@ -16,6 +16,7 @@
 		976BB88E1CEAA5FD00EC1430 /* ONDUTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BB88D1CEAA5FD00EC1430 /* ONDUTableViewCell.m */; };
 		976BB8961CEAED8300EC1430 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976BB8951CEAED8300EC1430 /* EventKit.framework */; };
 		976BB89C1CEB130100EC1430 /* ONDUTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BB89B1CEB130100EC1430 /* ONDUTimerViewController.m */; };
+		976BB89F1CEB155A00EC1430 /* ONDUPkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BB89E1CEB155A00EC1430 /* ONDUPkTableViewCell.m */; };
 		978F3F311CE90357004C3DD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F301CE90357004C3DD7 /* main.m */; };
 		978F3F341CE90357004C3DD7 /* ONDUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F331CE90357004C3DD7 /* ONDUAppDelegate.m */; };
 		978F3F371CE90357004C3DD7 /* ONDUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F361CE90357004C3DD7 /* ONDUViewController.m */; };
@@ -61,6 +62,8 @@
 		976BB8951CEAED8300EC1430 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		976BB89A1CEB130100EC1430 /* ONDUTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUTimerViewController.h; sourceTree = "<group>"; };
 		976BB89B1CEB130100EC1430 /* ONDUTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUTimerViewController.m; sourceTree = "<group>"; };
+		976BB89D1CEB155A00EC1430 /* ONDUPkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUPkTableViewCell.h; sourceTree = "<group>"; };
+		976BB89E1CEB155A00EC1430 /* ONDUPkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUPkTableViewCell.m; sourceTree = "<group>"; };
 		978F3F2C1CE90357004C3DD7 /* OnDriveUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnDriveUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		978F3F301CE90357004C3DD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		978F3F321CE90357004C3DD7 /* ONDUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONDUAppDelegate.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 			children = (
 				976BB89A1CEB130100EC1430 /* ONDUTimerViewController.h */,
 				976BB89B1CEB130100EC1430 /* ONDUTimerViewController.m */,
+				976BB89D1CEB155A00EC1430 /* ONDUPkTableViewCell.h */,
+				976BB89E1CEB155A00EC1430 /* ONDUPkTableViewCell.m */,
 			);
 			name = "Parking Timer";
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				976BB89F1CEB155A00EC1430 /* ONDUPkTableViewCell.m in Sources */,
 				978F3F371CE90357004C3DD7 /* ONDUViewController.m in Sources */,
 				978F3F671CE9175F004C3DD7 /* ONDUCollViewCell.m in Sources */,
 				978F3F341CE90357004C3DD7 /* ONDUAppDelegate.m in Sources */,

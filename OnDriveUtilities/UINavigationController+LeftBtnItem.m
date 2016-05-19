@@ -10,13 +10,15 @@
 
 @implementation UINavigationController (LeftBtnItem)
 
--(void) changeBackButtonItem:(NSString*)title
+-(void) changeBackButtonItem:(NSString*)title withCurrentObject:(UIViewController*)currentVwController
 {
     NSArray *viewControllerArr = [self viewControllers];
     // get index of the previous ViewContoller
+    NSUInteger prevIndex = [viewControllerArr indexOfObject:currentVwController];
+    NSInteger currenIndex = prevIndex - 1;
     UIViewController *previous;
-    if (viewControllerArr.count) {
-        previous = [viewControllerArr objectAtIndex:0];
+    if (currenIndex >= 0) {
+        previous = [viewControllerArr objectAtIndex:currenIndex];
         UIBarButtonItem *backBtn = [[UIBarButtonItem alloc]
                                     initWithTitle:@""
                                     style:UIBarButtonItemStylePlain

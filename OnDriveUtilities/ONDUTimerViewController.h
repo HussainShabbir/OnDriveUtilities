@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ONDUTimerViewController : UIViewController
+@interface ONDUTimerViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+
 
 @end

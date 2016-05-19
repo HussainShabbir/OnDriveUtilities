@@ -10,6 +10,6 @@
 
 @interface UINavigationController (LeftBtnItem)
 
--(void) changeBackButtonItem:(NSString*)title;
+-(void) changeBackButtonItem:(NSString*)title withCurrentObject:(UIViewController*)currentVwController;
 
 @end
