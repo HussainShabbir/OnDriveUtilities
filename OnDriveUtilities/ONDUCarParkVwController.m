@@ -42,20 +42,6 @@
         [self.locationManager startUpdatingLocation];
     }
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-//    NSDateFormatter *dat= [[NSDateFormatter alloc]init];
-//    [dat setLocale:[NSLocale currentLocale]];
-//    [dat setTimeZone:[NSTimeZone systemTimeZone]];
-//    NSDate *reminderDate=[NSDate date];
-//    reminderDate =[reminderDate dateByAddingTimeInterval:10];
-//    UILocalNotification  *missingDreamNotify=[[UILocalNotification alloc]init];
-//    missingDreamNotify.fireDate=reminderDate;
-//    missingDreamNotify.timeZone = [NSTimeZone defaultTimeZone];
-//    missingDreamNotify.alertBody = @"Reminder is set";
-//    missingDreamNotify.alertAction = @"Show me";
-//    missingDreamNotify.soundName = UILocalNotificationDefaultSoundName;
-//    missingDreamNotify.repeatInterval = NSCalendarUnitDay;
-//    [[UIApplication sharedApplication] scheduleLocalNotification:missingDreamNotify];
 }
 
 
@@ -100,8 +86,8 @@
 //    btn.tintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f];
     btn.tintColor = [UIColor darkTextColor];
     pinView.rightCalloutAccessoryView = btn;
-//    pinView.pinTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f];//[MKPinAnnotationView greenPinColor];
-    pinView.pinTintColor = [UIColor darkTextColor];
+    pinView.pinTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f];//[MKPinAnnotationView greenPinColor];
+//    pinView.pinTintColor = [UIColor darkTextColor];
     return pinView;
 }
 

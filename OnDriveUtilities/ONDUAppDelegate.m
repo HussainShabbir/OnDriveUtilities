@@ -8,6 +8,7 @@
 
 #import "ONDUAppDelegate.h"
 #import <EventKit/EventKit.h>
+//#import "ONDUShared.h"
 
 @interface ONDUAppDelegate ()
 
@@ -15,10 +16,20 @@
 
 @implementation ONDUAppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIUserNotificationType types = (UIUserNotificationType) (UIUserNotificationTypeSound | UIUserNotificationTypeAlert);
+    UIUserNotificationSettings *mySettings =
+    [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    NSLog(@"Alert");
+//    [[ONDUShared sharedManager]setUserDef:[NSUserDefaults standardUserDefaults]];
+//    [[[ONDUShared sharedManager]userDef]setObject:@"0:0:0" forKey:@"timerValue"];
+    [[UIApplication sharedApplication]cancelLocalNotification:notification];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

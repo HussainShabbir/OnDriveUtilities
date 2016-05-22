@@ -27,6 +27,7 @@
 		978F3F551CE90357004C3DD7 /* OnDriveUtilitiesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F541CE90357004C3DD7 /* OnDriveUtilitiesUITests.m */; };
 		978F3F641CE90F20004C3DD7 /* ONDUCollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F631CE90F20004C3DD7 /* ONDUCollViewController.m */; };
 		978F3F671CE9175F004C3DD7 /* ONDUCollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 978F3F661CE9175F004C3DD7 /* ONDUCollViewCell.m */; };
+		97EE52611CF1B66100969C76 /* ONDUShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EE52601CF1B66100969C76 /* ONDUShared.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		978F3F631CE90F20004C3DD7 /* ONDUCollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUCollViewController.m; sourceTree = "<group>"; };
 		978F3F651CE9175F004C3DD7 /* ONDUCollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUCollViewCell.h; sourceTree = "<group>"; };
 		978F3F661CE9175F004C3DD7 /* ONDUCollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUCollViewCell.m; sourceTree = "<group>"; };
+		97EE525F1CF1B66100969C76 /* ONDUShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUShared.h; sourceTree = "<group>"; };
+		97EE52601CF1B66100969C76 /* ONDUShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUShared.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,7 @@
 		978F3F2E1CE90357004C3DD7 /* OnDriveUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				97EE525E1CF1B61800969C76 /* Singleton */,
 				976BB8991CEB12DE00EC1430 /* Parking Timer */,
 				972736A21CE935840066F61E /* Category */,
 				9727369E1CE932E10066F61E /* CarParking */,
@@ -228,6 +232,15 @@
 				978F3F561CE90357004C3DD7 /* Info.plist */,
 			);
 			path = OnDriveUtilitiesUITests;
+			sourceTree = "<group>";
+		};
+		97EE525E1CF1B61800969C76 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				97EE525F1CF1B66100969C76 /* ONDUShared.h */,
+				97EE52601CF1B66100969C76 /* ONDUShared.m */,
+			);
+			name = Singleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +382,7 @@
 				978F3F371CE90357004C3DD7 /* ONDUViewController.m in Sources */,
 				978F3F671CE9175F004C3DD7 /* ONDUCollViewCell.m in Sources */,
 				978F3F341CE90357004C3DD7 /* ONDUAppDelegate.m in Sources */,
+				97EE52611CF1B66100969C76 /* ONDUShared.m in Sources */,
 				978F3F641CE90F20004C3DD7 /* ONDUCollViewController.m in Sources */,
 				976BB89C1CEB130100EC1430 /* ONDUTimerViewController.m in Sources */,
 				978F3F311CE90357004C3DD7 /* main.m in Sources */,
