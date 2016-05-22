@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ONDUTimerViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
-
+@property (nonatomic,weak) IBOutlet UITableView *tableView;
 @end

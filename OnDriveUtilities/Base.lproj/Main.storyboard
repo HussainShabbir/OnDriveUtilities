@@ -177,7 +177,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="212" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fh5-tc-cu0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="212" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fh5-tc-cu0">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -259,6 +259,9 @@
                             <constraint firstItem="fh5-tc-cu0" firstAttribute="top" secondItem="ARB-A7-sqj" secondAttribute="bottom" id="zjt-PS-JnG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fh5-tc-cu0" id="tK3-Mg-ijb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xs7-Lk-oPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -21,6 +21,7 @@
     [super viewDidLoad];
     [self.navigationController changeBackButtonItem:nil withCurrentObject:self];
     self.navigationItem.title = @"Timer";
+    self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     // Do any additional setup after loading the view.
 }
 
