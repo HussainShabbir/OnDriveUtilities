@@ -49,6 +49,7 @@
 		97EE528E1CF309E800969C76 /* Hotel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE528B1CF309E800969C76 /* Hotel1.png */; };
 		97EE528F1CF309E800969C76 /* Hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE528C1CF309E800969C76 /* Hotel.png */; };
 		97EE52901CF309E800969C76 /* Hotel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE528D1CF309E800969C76 /* Hotel2.png */; };
+		97EE52921CF30BD900969C76 /* hotel4.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52911CF30BD900969C76 /* hotel4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		97EE528B1CF309E800969C76 /* Hotel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hotel1.png; sourceTree = "<group>"; };
 		97EE528C1CF309E800969C76 /* Hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hotel.png; sourceTree = "<group>"; };
 		97EE528D1CF309E800969C76 /* Hotel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hotel2.png; sourceTree = "<group>"; };
+		97EE52911CF30BD900969C76 /* hotel4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotel4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 		97EE52681CF2FCD600969C76 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				97EE52911CF30BD900969C76 /* hotel4.png */,
 				97EE526D1CF2FF9A00969C76 /* motor.png */,
 				97EE526B1CF2FF4C00969C76 /* timer.png */,
 				97EE526F1CF3008A00969C76 /* Counttimer.png */,
@@ -440,6 +443,7 @@
 				978F3F3F1CE90357004C3DD7 /* LaunchScreen.storyboard in Resources */,
 				97EE52841CF3074F00969C76 /* hospital1.png in Resources */,
 				97EE528E1CF309E800969C76 /* Hotel1.png in Resources */,
+				97EE52921CF30BD900969C76 /* hotel4.png in Resources */,
 				97EE527C1CF3055E00969C76 /* ParkingTimer.png in Resources */,
 				97EE52721CF3022700969C76 /* fuel.png in Resources */,
 				97EE52761CF303D900969C76 /* Gas.png in Resources */,
