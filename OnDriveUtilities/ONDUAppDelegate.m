@@ -8,10 +8,14 @@
 
 #import "ONDUAppDelegate.h"
 #import <EventKit/EventKit.h>
-//#import "ONDUShared.h"
+#import <CoreTelephony/CTCall.h>
+#import <CoreTelephony/CTCallCenter.h>
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 @interface ONDUAppDelegate ()
-
+@property (nonatomic, strong) CTCallCenter* callCenter;
+@property (nonatomic) BOOL callWasStarted;
 @end
 
 @implementation ONDUAppDelegate
@@ -25,10 +29,9 @@
     return YES;
 }
 
+
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     NSLog(@"Alert");
-//    [[ONDUShared sharedManager]setUserDef:[NSUserDefaults standardUserDefaults]];
-//    [[[ONDUShared sharedManager]userDef]setObject:@"0:0:0" forKey:@"timerValue"];
     [[UIApplication sharedApplication]cancelLocalNotification:notification];
 }
 

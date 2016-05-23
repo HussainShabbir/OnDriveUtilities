@@ -13,6 +13,7 @@
 typedef enum : NSInteger {
     kCarParking = 0,
     kPArkingTimer,
+    kTransportation
 } OnDriveEnumTypes;
 
 @interface ONDUCollViewController ()
@@ -28,7 +29,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Uncomment the following line to preserve selection between presentations
      self.clearsSelectionOnViewWillAppear = NO;
-    self.utilities = @[@"Car Parking",@"Parking Meter",@"OnDrive SMS",@"OnDrive Call",@"Utilities",@"Settings"];
+//    self.utilities = @[@"Car Parking",@"Parking Meter",@"OnDrive SMS",@"OnDrive Call",@"Utilities",@"Settings"];
+    self.utilities = @[@"Car Parking",@"Parking Meter",@"Gas Stations",@"Hospitals",@"Restaurants",@"Settings"];
     self.navigationController.toolbarHidden = NO;
     self.navigationController.toolbar.barTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0];
 }
@@ -116,6 +118,7 @@ static NSString * const reuseIdentifier = @"Cell";
             identifier = @"ParkingTimerIdentifier";
             break;
         default:
+            identifier = @"TransPortIdentifier";
             break;
     }
     [self performSegueWithIdentifier:identifier sender:self];

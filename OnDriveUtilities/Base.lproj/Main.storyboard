@@ -85,11 +85,47 @@
                     <connections>
                         <segue destination="8uD-PV-rdm" kind="show" identifier="ParkingTimerIdentifier" id="UHE-Wr-q9E"/>
                         <segue destination="ohA-3o-KqY" kind="show" identifier="CarParkingIdentifier" id="Kyh-QY-RaG"/>
+                        <segue destination="WTv-BK-0yM" kind="show" identifier="TransPortIdentifier" id="chm-bX-VYZ"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLy-jr-gN4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-85" y="1008"/>
+        </scene>
+        <!--Transit Viewcontroller-->
+        <scene sceneID="BHC-cR-YY4">
+            <objects>
+                <viewController id="WTv-BK-0yM" customClass="ONDUTransitViewcontroller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RvI-6r-VIr"/>
+                        <viewControllerLayoutGuide type="bottom" id="h1F-7W-CFd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="241-o1-eiY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="04m-8V-jaH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WTv-BK-0yM" id="Inf-yt-SQb"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="04m-8V-jaH" firstAttribute="bottom" secondItem="h1F-7W-CFd" secondAttribute="top" id="4w6-Ll-9NB"/>
+                            <constraint firstAttribute="trailing" secondItem="04m-8V-jaH" secondAttribute="trailing" id="VAz-2A-5Ug"/>
+                            <constraint firstItem="04m-8V-jaH" firstAttribute="top" secondItem="241-o1-eiY" secondAttribute="top" id="g82-3X-v1f"/>
+                            <constraint firstItem="04m-8V-jaH" firstAttribute="leading" secondItem="241-o1-eiY" secondAttribute="leading" id="wL2-Sy-et3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapVw" destination="04m-8V-jaH" id="lx3-l0-dP4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Glw-Yu-oih" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-173" y="1742"/>
         </scene>
         <!--Car Park Vw Controller-->
         <scene sceneID="Xvk-gS-Wt0">
@@ -265,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xs7-Lk-oPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="483" y="1699"/>
+            <point key="canvasLocation" x="667" y="1727"/>
         </scene>
     </scenes>
 </document>
