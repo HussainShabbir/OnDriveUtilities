@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController changeBackButtonItem:nil withCurrentObject:self];
-    self.navigationItem.title = @"Gas Stations";
+    self.navigationItem.title = self.selectedTransit;
     if ([CLLocationManager locationServicesEnabled])
     {
         if (self.locationManager == nil )

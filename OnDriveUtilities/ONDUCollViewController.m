@@ -19,6 +19,7 @@ typedef enum : NSInteger {
 
 @interface ONDUCollViewController ()
 @property (nonatomic,strong) NSArray * utilities;
+@property (nonatomic,strong) NSArray * utilitiesImages;
 @property (nonatomic,strong) NSString * selectedCellValue;
 @end
 
@@ -31,8 +32,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Uncomment the following line to preserve selection between presentations
      self.clearsSelectionOnViewWillAppear = NO;
-//    self.utilities = @[@"Car Parking",@"Parking Meter",@"OnDrive SMS",@"OnDrive Call",@"Utilities",@"Settings"];
     self.utilities = @[@"Car Parking",@"Parking Meter",@"Gas Stations",@"Hospitals",@"Restaurants",@"Hotels"];
+    self.utilitiesImages = @[[UIImage imageNamed:@"motor"],[UIImage imageNamed:@"Parktimer"],[UIImage imageNamed:@"Gas"],[UIImage imageNamed:@"hospital1"],[UIImage imageNamed:@"restaurant"],[UIImage imageNamed:@"Hotel"]];
     self.navigationController.toolbarHidden = NO;
     self.navigationController.toolbar.barTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0];
 }
@@ -75,6 +76,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ONDUCollViewCell *cell = (ONDUCollViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.lbl.text = self.utilities[indexPath.row];
+    cell.imageVw.image = self.utilitiesImages[indexPath.row];
     cell.layer.borderWidth=1.0f;
     cell.layer.cornerRadius = 5.0f;
     cell.layer.borderColor=[UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f].CGColor;

@@ -30,6 +30,25 @@
 		97EE52611CF1B66100969C76 /* ONDUShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EE52601CF1B66100969C76 /* ONDUShared.m */; };
 		97EE52631CF22D3300969C76 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97EE52621CF22D3300969C76 /* CoreTelephony.framework */; };
 		97EE52671CF2656C00969C76 /* ONDUTransitViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 97EE52661CF2656C00969C76 /* ONDUTransitViewcontroller.m */; };
+		97EE526C1CF2FF4C00969C76 /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE526B1CF2FF4C00969C76 /* timer.png */; };
+		97EE526E1CF2FF9A00969C76 /* motor.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE526D1CF2FF9A00969C76 /* motor.png */; };
+		97EE52701CF3008A00969C76 /* Counttimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE526F1CF3008A00969C76 /* Counttimer.png */; };
+		97EE52721CF3022700969C76 /* fuel.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52711CF3022700969C76 /* fuel.png */; };
+		97EE52741CF3036800969C76 /* Carfuels.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52731CF3036800969C76 /* Carfuels.png */; };
+		97EE52761CF303D900969C76 /* Gas.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52751CF303D900969C76 /* Gas.png */; };
+		97EE52781CF3048300969C76 /* counter.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52771CF3048300969C76 /* counter.png */; };
+		97EE527A1CF304CE00969C76 /* Parktimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52791CF304CE00969C76 /* Parktimer.png */; };
+		97EE527C1CF3055E00969C76 /* ParkingTimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE527B1CF3055E00969C76 /* ParkingTimer.png */; };
+		97EE527E1CF3059E00969C76 /* timer1.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE527D1CF3059E00969C76 /* timer1.png */; };
+		97EE52801CF3061F00969C76 /* runningTimer.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE527F1CF3061F00969C76 /* runningTimer.png */; };
+		97EE52821CF3074900969C76 /* hospitals.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52811CF3074900969C76 /* hospitals.png */; };
+		97EE52841CF3074F00969C76 /* hospital1.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52831CF3074F00969C76 /* hospital1.png */; };
+		97EE52881CF308A100969C76 /* restaurant2.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52851CF308A100969C76 /* restaurant2.png */; };
+		97EE52891CF308A100969C76 /* restaurant1.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52861CF308A100969C76 /* restaurant1.png */; };
+		97EE528A1CF308A100969C76 /* restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE52871CF308A100969C76 /* restaurant.png */; };
+		97EE528E1CF309E800969C76 /* Hotel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE528B1CF309E800969C76 /* Hotel1.png */; };
+		97EE528F1CF309E800969C76 /* Hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE528C1CF309E800969C76 /* Hotel.png */; };
+		97EE52901CF309E800969C76 /* Hotel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 97EE528D1CF309E800969C76 /* Hotel2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +111,25 @@
 		97EE52621CF22D3300969C76 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		97EE52651CF2656C00969C76 /* ONDUTransitViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUTransitViewcontroller.h; sourceTree = "<group>"; };
 		97EE52661CF2656C00969C76 /* ONDUTransitViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUTransitViewcontroller.m; sourceTree = "<group>"; };
+		97EE526B1CF2FF4C00969C76 /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
+		97EE526D1CF2FF9A00969C76 /* motor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = motor.png; sourceTree = "<group>"; };
+		97EE526F1CF3008A00969C76 /* Counttimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Counttimer.png; sourceTree = "<group>"; };
+		97EE52711CF3022700969C76 /* fuel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fuel.png; sourceTree = "<group>"; };
+		97EE52731CF3036800969C76 /* Carfuels.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Carfuels.png; sourceTree = "<group>"; };
+		97EE52751CF303D900969C76 /* Gas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gas.png; sourceTree = "<group>"; };
+		97EE52771CF3048300969C76 /* counter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = counter.png; sourceTree = "<group>"; };
+		97EE52791CF304CE00969C76 /* Parktimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Parktimer.png; sourceTree = "<group>"; };
+		97EE527B1CF3055E00969C76 /* ParkingTimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ParkingTimer.png; sourceTree = "<group>"; };
+		97EE527D1CF3059E00969C76 /* timer1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer1.png; sourceTree = "<group>"; };
+		97EE527F1CF3061F00969C76 /* runningTimer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runningTimer.png; sourceTree = "<group>"; };
+		97EE52811CF3074900969C76 /* hospitals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospitals.png; sourceTree = "<group>"; };
+		97EE52831CF3074F00969C76 /* hospital1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital1.png; sourceTree = "<group>"; };
+		97EE52851CF308A100969C76 /* restaurant2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant2.png; sourceTree = "<group>"; };
+		97EE52861CF308A100969C76 /* restaurant1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant1.png; sourceTree = "<group>"; };
+		97EE52871CF308A100969C76 /* restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant.png; sourceTree = "<group>"; };
+		97EE528B1CF309E800969C76 /* Hotel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hotel1.png; sourceTree = "<group>"; };
+		97EE528C1CF309E800969C76 /* Hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hotel.png; sourceTree = "<group>"; };
+		97EE528D1CF309E800969C76 /* Hotel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hotel2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +232,7 @@
 		978F3F2E1CE90357004C3DD7 /* OnDriveUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				97EE52681CF2FCD600969C76 /* Images */,
 				97EE52641CF2653400969C76 /* Transportation */,
 				97EE525E1CF1B61800969C76 /* Singleton */,
 				976BB8991CEB12DE00EC1430 /* Parking Timer */,
@@ -258,6 +297,32 @@
 				97EE52661CF2656C00969C76 /* ONDUTransitViewcontroller.m */,
 			);
 			name = Transportation;
+			sourceTree = "<group>";
+		};
+		97EE52681CF2FCD600969C76 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				97EE526D1CF2FF9A00969C76 /* motor.png */,
+				97EE526B1CF2FF4C00969C76 /* timer.png */,
+				97EE526F1CF3008A00969C76 /* Counttimer.png */,
+				97EE52711CF3022700969C76 /* fuel.png */,
+				97EE52731CF3036800969C76 /* Carfuels.png */,
+				97EE52751CF303D900969C76 /* Gas.png */,
+				97EE52771CF3048300969C76 /* counter.png */,
+				97EE52791CF304CE00969C76 /* Parktimer.png */,
+				97EE527B1CF3055E00969C76 /* ParkingTimer.png */,
+				97EE527D1CF3059E00969C76 /* timer1.png */,
+				97EE527F1CF3061F00969C76 /* runningTimer.png */,
+				97EE52811CF3074900969C76 /* hospitals.png */,
+				97EE52831CF3074F00969C76 /* hospital1.png */,
+				97EE52851CF308A100969C76 /* restaurant2.png */,
+				97EE52861CF308A100969C76 /* restaurant1.png */,
+				97EE52871CF308A100969C76 /* restaurant.png */,
+				97EE528B1CF309E800969C76 /* Hotel1.png */,
+				97EE528C1CF309E800969C76 /* Hotel.png */,
+				97EE528D1CF309E800969C76 /* Hotel2.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,9 +433,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97EE52781CF3048300969C76 /* counter.png in Resources */,
+				97EE526E1CF2FF9A00969C76 /* motor.png in Resources */,
+				97EE52821CF3074900969C76 /* hospitals.png in Resources */,
+				97EE527A1CF304CE00969C76 /* Parktimer.png in Resources */,
 				978F3F3F1CE90357004C3DD7 /* LaunchScreen.storyboard in Resources */,
+				97EE52841CF3074F00969C76 /* hospital1.png in Resources */,
+				97EE528E1CF309E800969C76 /* Hotel1.png in Resources */,
+				97EE527C1CF3055E00969C76 /* ParkingTimer.png in Resources */,
+				97EE52721CF3022700969C76 /* fuel.png in Resources */,
+				97EE52761CF303D900969C76 /* Gas.png in Resources */,
 				978F3F3C1CE90357004C3DD7 /* Assets.xcassets in Resources */,
+				97EE52741CF3036800969C76 /* Carfuels.png in Resources */,
+				97EE52801CF3061F00969C76 /* runningTimer.png in Resources */,
 				978F3F3A1CE90357004C3DD7 /* Main.storyboard in Resources */,
+				97EE528A1CF308A100969C76 /* restaurant.png in Resources */,
+				97EE527E1CF3059E00969C76 /* timer1.png in Resources */,
+				97EE526C1CF2FF4C00969C76 /* timer.png in Resources */,
+				97EE52901CF309E800969C76 /* Hotel2.png in Resources */,
+				97EE52881CF308A100969C76 /* restaurant2.png in Resources */,
+				97EE52891CF308A100969C76 /* restaurant1.png in Resources */,
+				97EE52701CF3008A00969C76 /* Counttimer.png in Resources */,
+				97EE528F1CF309E800969C76 /* Hotel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
