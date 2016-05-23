@@ -22,14 +22,15 @@
 //    return self.locationName;
 //}
 
-//-(MKMapItem *)mapItem{
-//    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.coordinate addressDictionary:@{CNPostalAddressStreetKey : self.title}];
-//    MKMapItem *mapItm = [[MKMapItem alloc]initWithPlacemark:placemark];
-//    return mapItm;
-//}
+-(MKMapItem *)mapItem{
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.coordinate addressDictionary:@{CNPostalAddressStreetKey : self.title}];
+    MKMapItem *mapItm = [[MKMapItem alloc]initWithPlacemark:placemark];
+    return mapItm;
+}
 
--(id)initWithTitle : (NSString*)title withCoordinate: (CLLocationCoordinate2D)mapCoordinate{
+-(id)initWithTitle: (NSString*)title withSubTitle: (NSString*)subtitle withCoordinate: (CLLocationCoordinate2D)mapCoordinate{
     self.title = title;
+    self.subtitle = subtitle;
     self.coordinate = mapCoordinate;
     return self;
 }

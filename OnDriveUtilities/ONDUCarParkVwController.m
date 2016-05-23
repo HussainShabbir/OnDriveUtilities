@@ -37,7 +37,7 @@
             [self.locationManager requestWhenInUseAuthorization];
             self.locationManager.delegate = self;
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-            self.locationManager.distanceFilter = kCLDistanceFilterNone;// kDistanceFilter;
+            self.locationManager.distanceFilter = kCLDistanceFilterNone;
         }
         [self.locationManager startUpdatingLocation];
     }
@@ -55,7 +55,7 @@
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error == nil && [placemarks count] > 0) {
             self.placeMk = [[MKPlacemark alloc]initWithPlacemark:placemarks.lastObject];
-            ONDUMapAnnotation *annotation = [[ONDUMapAnnotation alloc]initWithTitle:@"Park Here" withCoordinate:currentLocation.coordinate];
+            ONDUMapAnnotation *annotation = [[ONDUMapAnnotation alloc]initWithTitle:@"Park Here" withSubTitle:nil withCoordinate:currentLocation.coordinate];
             [self.map addAnnotation:annotation];
             self.location = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",
                                  self.placeMk.subThoroughfare, self.placeMk.thoroughfare,
@@ -123,7 +123,6 @@
         [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
         [self.tableView endUpdates];
     }
-    
 }
 
 

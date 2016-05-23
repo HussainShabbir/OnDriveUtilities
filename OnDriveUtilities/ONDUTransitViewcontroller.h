@@ -12,5 +12,5 @@
 @interface ONDUTransitViewcontroller : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (nonatomic,weak) IBOutlet MKMapView *mapVw;
-
+@property (nonatomic,strong) NSString *selectedTransit;
 @end

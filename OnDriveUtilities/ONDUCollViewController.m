@@ -8,6 +8,7 @@
 
 #import "ONDUCollViewController.h"
 #import "ONDUCollViewCell.h"
+#import "ONDUTransitViewcontroller.h"
 
 
 typedef enum : NSInteger {
@@ -18,6 +19,7 @@ typedef enum : NSInteger {
 
 @interface ONDUCollViewController ()
 @property (nonatomic,strong) NSArray * utilities;
+@property (nonatomic,strong) NSString * selectedCellValue;
 @end
 
 @implementation ONDUCollViewController
@@ -30,7 +32,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // Uncomment the following line to preserve selection between presentations
      self.clearsSelectionOnViewWillAppear = NO;
 //    self.utilities = @[@"Car Parking",@"Parking Meter",@"OnDrive SMS",@"OnDrive Call",@"Utilities",@"Settings"];
-    self.utilities = @[@"Car Parking",@"Parking Meter",@"Gas Stations",@"Hospitals",@"Restaurants",@"Settings"];
+    self.utilities = @[@"Car Parking",@"Parking Meter",@"Gas Stations",@"Hospitals",@"Restaurants",@"Hotels"];
     self.navigationController.toolbarHidden = NO;
     self.navigationController.toolbar.barTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0];
 }
@@ -52,7 +54,10 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
+    if ([segue.identifier isEqualToString:@"TransPortIdentifier"]){
+        ONDUTransitViewcontroller *vwController = segue.destinationViewController;
+        vwController.selectedTransit = self.selectedCellValue;
+    }
 }
 
 
@@ -119,6 +124,8 @@ static NSString * const reuseIdentifier = @"Cell";
             break;
         default:
             identifier = @"TransPortIdentifier";
+            ONDUCollViewCell *selectedCell = (ONDUCollViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+            self.selectedCellValue = selectedCell.lbl.text;
             break;
     }
     [self performSegueWithIdentifier:identifier sender:self];
