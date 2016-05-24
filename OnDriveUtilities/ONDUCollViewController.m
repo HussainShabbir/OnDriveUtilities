@@ -44,12 +44,14 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     NSString *texttoshare = @"Hey! I just downloaded the app, Its amazing quiz app while driving. It tracks Car Parking info, and other important things. Would you like to download OnDrive Utitlities.";
     UIActivityViewController *activityVc = nil;
-    WFActivitySpecificItemProvider *itemProvider1 = [[WFActivitySpecificItemProvider alloc]initWithPlaceholderItem:@{WFActivitySpecificItemProviderTypeDefault : texttoshare, UIActivityTypePostToFacebook : texttoshare, UIActivityTypePostToTwitter : texttoshare, UIActivityTypeMessage : texttoshare}];
+    WFActivitySpecificItemProvider *itemProvider1 = [[WFActivitySpecificItemProvider alloc]initWithPlaceholderItem:@{@"WFActivitySpecificItemProviderTypeDefault" : texttoshare, UIActivityTypePostToFacebook : texttoshare, UIActivityTypePostToTwitter : texttoshare, UIActivityTypeMessage : texttoshare}];
     
     WFActivitySpecificItemProvider *itemProvider2 = [[WFActivitySpecificItemProvider alloc]initWithPlaceholderItem:nil block:^id(NSString *activityType) {
         if ([activityType isEqualToString:@"net.whatsapp.WhatsApp.ShareExtension"]){
             [activityVc dismissViewControllerAnimated:NO completion:nil];
-            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"net.whatsapp.WhatsApp.ShareExtension"]];
+            NSString *string = [NSString stringWithFormat:@"whatsapp://send?text=%@",texttoshare];
+            NSURL *url = [NSURL URLWithString:[string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+            [[UIApplication sharedApplication] openURL: url];
         }
         return texttoshare;
     }];

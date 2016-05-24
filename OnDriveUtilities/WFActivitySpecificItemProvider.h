@@ -1,14 +1,15 @@
 //
 //  WFActivitySpecificItemProvider.h
-//  ShareMe
+//  OnDriveUtilities
 //
-//  Created by Wiley Wimberly on 12/2/12.
-//  Copyright (c) 2012 Warm Fuzzy Apps LLC. All rights reserved.
+//  Created by Hussain Shabbir on 5/23/16.
+//  Copyright © 2016 Hussain Shabbir. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-NSString *const WFActivitySpecificItemProviderTypeDefault;
+
+//NSString *const WFActivitySpecificItemProviderTypeDefault;
 
 typedef id (^WFActivitySpecificItemProviderItemBlock)(NSString *activityType);
 
