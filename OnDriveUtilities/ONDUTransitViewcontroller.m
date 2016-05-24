@@ -31,7 +31,7 @@
             self.locationManager = [[CLLocationManager alloc] init];
             [self.locationManager requestWhenInUseAuthorization];
             self.locationManager.delegate = self;
-            self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
             self.locationManager.distanceFilter = kCLDistanceFilterNone;
         }
         [self.locationManager startUpdatingLocation];

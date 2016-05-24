@@ -33,7 +33,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // Uncomment the following line to preserve selection between presentations
      self.clearsSelectionOnViewWillAppear = NO;
     self.utilities = @[@"Car Parking",@"Parking Meter",@"Gas Stations",@"Hospitals",@"Restaurants",@"Hotels"];
-    self.utilitiesImages = @[[UIImage imageNamed:@"motor"],[UIImage imageNamed:@"Parktimer"],[UIImage imageNamed:@"Gas"],[UIImage imageNamed:@"hospital1"],[UIImage imageNamed:@"restaurant"],[UIImage imageNamed:@"Hotel"]];
+    self.utilitiesImages = @[[UIImage imageNamed:@"Motor"],[UIImage imageNamed:@"Timer"],[UIImage imageNamed:@"GasFuel"],[UIImage imageNamed:@"Hospital"],[UIImage imageNamed:@"Restaurant"],[UIImage imageNamed:@"Hotel"]];
     self.navigationController.toolbarHidden = NO;
     self.navigationController.toolbar.barTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0];
 }
@@ -63,11 +63,9 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 #pragma mark <UICollectionViewDataSource>
-
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 6;
@@ -79,7 +77,8 @@ static NSString * const reuseIdentifier = @"Cell";
     cell.imageVw.image = self.utilitiesImages[indexPath.row];
     cell.layer.borderWidth=1.0f;
     cell.layer.cornerRadius = 5.0f;
-    cell.layer.borderColor=[UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f].CGColor;
+    cell.layer.borderColor = [UIColor blackColor].CGColor;
+//    cell.layer.borderColor=[UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0f].CGColor;
     // Configure the cell
     return cell;
 }
