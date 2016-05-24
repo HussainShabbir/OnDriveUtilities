@@ -43,6 +43,21 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    @try
+    {
+        UINavigationController *navigationController = (UINavigationController*)self.window.rootViewController;
+        id vwControllers = navigationController.viewControllers;
+        if ([vwControllers count] > 1){
+            for (NSUInteger i = 0; i< [vwControllers count]; i++)
+            {
+                [navigationController popViewControllerAnimated:YES];
+            }
+        }
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"Exception=%@",exception.reason);
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

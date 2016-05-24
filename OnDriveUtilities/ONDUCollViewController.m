@@ -11,8 +11,6 @@
 #import "ONDUTransitViewcontroller.h"
 #import "WFActivitySpecificItemProvider.h"
 
-
-
 typedef enum : NSInteger {
     kCarParking = 0,
     kPArkingTimer,
@@ -33,16 +31,64 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations
-     self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = NO;
     self.utilities = @[@"Car Parking",@"Parking Meter",@"Gas Stations",@"Hospitals",@"Restaurants",@"Hotels"];
     self.utilitiesImages = @[[UIImage imageNamed:@"Motor"],[UIImage imageNamed:@"Timer"],[UIImage imageNamed:@"GasFuel"],[UIImage imageNamed:@"Hospital"],[UIImage imageNamed:@"Restaurant"],[UIImage imageNamed:@"Hotel"]];
     self.navigationController.toolbarHidden = NO;
     self.navigationController.toolbar.barTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0];
+    UIBarButtonItem *rate = [[UIBarButtonItem alloc]initWithTitle:@"Rate us" style:UIBarButtonItemStylePlain target:self action:@selector(doRateUs:)];
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *feedBack = [[UIBarButtonItem alloc]initWithTitle:@"Feedback" style:UIBarButtonItemStylePlain target:self action:@selector(doFeedBack:)];
+    UIBarButtonItem *help = [[UIBarButtonItem alloc]initWithTitle:@"Help" style:UIBarButtonItemStylePlain target:self action:@selector(showHelp:)];
+    
+    [self setToolbarItems:@[rate,flexibleSpace,feedBack,flexibleSpace,help]];
+    for (UIBarButtonItem *item in self.toolbarItems){
+        item.tintColor = [UIColor blackColor];
+    }
+    
+}
+-(void)doRateUs:(id)sender
+{
+    NSString *itunesAppUrl = @"itms-apps://itunes.apple.com/app/id1105328604";
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:itunesAppUrl]];
+}
+
+-(void)doFeedBack:(id)sender{
+    if ([MFMailComposeViewController canSendMail]){
+        MFMailComposeViewController *mail = [[MFMailComposeViewController alloc]init];
+        mail.mailComposeDelegate = self;
+        [mail setSubject:@"OnDrive Utilities"];
+        [mail setToRecipients:@[@"hshabbirhussain53@gmail.com"]];
+        [self presentViewController:mail animated:YES completion:nil];
+    }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    switch (result) {
+        case MFMailComposeResultSent:
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            break;
+            
+        case MFMailComposeResultCancelled:
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            break;
+            
+        case MFMailComposeResultSaved:
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)showHelp:(id)sender{
+    
 }
 
 -(IBAction)doShare:(id)sender
 {
-    NSString *texttoshare = @"Hey! I just downloaded the app, Its amazing quiz app while driving. It tracks Car Parking info, and other important things. Would you like to download OnDrive Utitlities.";
+    NSString *texttoshare = @"Hey! I just downloaded the app, Its amazing app while driving. It tracks the Car Parking info, and other important things. Would you like to download OnDrive Utitlities.";
     UIActivityViewController *activityVc = nil;
     WFActivitySpecificItemProvider *itemProvider1 = [[WFActivitySpecificItemProvider alloc]initWithPlaceholderItem:@{@"WFActivitySpecificItemProviderTypeDefault" : texttoshare, UIActivityTypePostToFacebook : texttoshare, UIActivityTypePostToTwitter : texttoshare, UIActivityTypeMessage : texttoshare}];
     

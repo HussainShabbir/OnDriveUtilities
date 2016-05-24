@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ONDUCollViewController : UICollectionViewController
+@interface ONDUCollViewController : UICollectionViewController<MFMailComposeViewControllerDelegate>
 
 @end
