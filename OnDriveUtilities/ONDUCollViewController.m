@@ -110,7 +110,15 @@ static NSString * const reuseIdentifier = @"Cell";
     
     activityVc.excludedActivityTypes = @[UIActivityTypeAddToReadingList,UIActivityTypeCopyToPasteboard,UIActivityTypePostToFlickr,UIActivityTypePostToWeibo,UIActivityTypeAssignToContact,UIActivityTypePostToVimeo,UIActivityTypePostToTencentWeibo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypeAirDrop];
     activityVc.view.tintColor = [UIColor blackColor];
-    [self presentViewController:activityVc animated:YES completion:nil];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone){
+        [self presentViewController:activityVc animated:YES completion:nil];
+    }
+    else{
+        UIPopoverController *popOverVc = [[UIPopoverController alloc]initWithContentViewController:activityVc];
+        UIBarButtonItem *item = self.navigationItem.rightBarButtonItem;
+        UIView *view = [item valueForKey:@"view"];
+        [popOverVc presentPopoverFromRect:view.bounds inView:view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
