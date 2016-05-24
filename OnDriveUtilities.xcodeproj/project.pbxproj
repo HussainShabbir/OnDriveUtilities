@@ -115,6 +115,7 @@
 		97398B4C1CF3DA5E00C96387 /* Timer-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97398AF71CF3DA5E00C96387 /* Timer-Small@3x.png */; };
 		97398B4D1CF3DA5E00C96387 /* Timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 97398AF81CF3DA5E00C96387 /* Timer.png */; };
 		97398B4E1CF3DA5E00C96387 /* Timer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97398AF91CF3DA5E00C96387 /* Timer@2x.png */; };
+		97398B981CF3E9EF00C96387 /* WFActivitySpecificItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 97398B971CF3E9EF00C96387 /* WFActivitySpecificItemProvider.m */; };
 		976BB88E1CEAA5FD00EC1430 /* ONDUTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BB88D1CEAA5FD00EC1430 /* ONDUTableViewCell.m */; };
 		976BB8961CEAED8300EC1430 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 976BB8951CEAED8300EC1430 /* EventKit.framework */; };
 		976BB89C1CEB130100EC1430 /* ONDUTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 976BB89B1CEB130100EC1430 /* ONDUTimerViewController.m */; };
@@ -264,6 +265,8 @@
 		97398AF71CF3DA5E00C96387 /* Timer-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Timer-Small@3x.png"; path = "OnDriveUtilities/Images/Timer-Small@3x.png"; sourceTree = "<group>"; };
 		97398AF81CF3DA5E00C96387 /* Timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Timer.png; path = OnDriveUtilities/Images/Timer.png; sourceTree = "<group>"; };
 		97398AF91CF3DA5E00C96387 /* Timer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Timer@2x.png"; path = "OnDriveUtilities/Images/Timer@2x.png"; sourceTree = "<group>"; };
+		97398B961CF3E9EF00C96387 /* WFActivitySpecificItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFActivitySpecificItemProvider.h; sourceTree = "<group>"; };
+		97398B971CF3E9EF00C96387 /* WFActivitySpecificItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFActivitySpecificItemProvider.m; sourceTree = "<group>"; };
 		976BB88C1CEAA5FD00EC1430 /* ONDUTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUTableViewCell.h; sourceTree = "<group>"; };
 		976BB88D1CEAA5FD00EC1430 /* ONDUTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUTableViewCell.m; sourceTree = "<group>"; };
 		976BB8951CEAED8300EC1430 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -363,6 +366,15 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		97398B951CF3E9D300C96387 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				97398B961CF3E9EF00C96387 /* WFActivitySpecificItemProvider.h */,
+				97398B971CF3E9EF00C96387 /* WFActivitySpecificItemProvider.m */,
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
 		976BB8991CEB12DE00EC1430 /* Parking Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +411,7 @@
 		978F3F2E1CE90357004C3DD7 /* OnDriveUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				97398B951CF3E9D300C96387 /* Share */,
 				97EE52641CF2653400969C76 /* Transportation */,
 				97EE525E1CF1B61800969C76 /* Singleton */,
 				976BB8991CEB12DE00EC1430 /* Parking Timer */,
@@ -811,6 +824,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97398B981CF3E9EF00C96387 /* WFActivitySpecificItemProvider.m in Sources */,
 				976BB89F1CEB155A00EC1430 /* ONDUPkTableViewCell.m in Sources */,
 				978F3F371CE90357004C3DD7 /* ONDUViewController.m in Sources */,
 				97EE52671CF2656C00969C76 /* ONDUTransitViewcontroller.m in Sources */,

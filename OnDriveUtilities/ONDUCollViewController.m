@@ -9,6 +9,8 @@
 #import "ONDUCollViewController.h"
 #import "ONDUCollViewCell.h"
 #import "ONDUTransitViewcontroller.h"
+#import "WFActivitySpecificItemProvider.h"
+
 
 
 typedef enum : NSInteger {
@@ -36,6 +38,27 @@ static NSString * const reuseIdentifier = @"Cell";
     self.utilitiesImages = @[[UIImage imageNamed:@"Motor"],[UIImage imageNamed:@"Timer"],[UIImage imageNamed:@"GasFuel"],[UIImage imageNamed:@"Hospital"],[UIImage imageNamed:@"Restaurant"],[UIImage imageNamed:@"Hotel"]];
     self.navigationController.toolbarHidden = NO;
     self.navigationController.toolbar.barTintColor = [UIColor colorWithRed:(91/255.0f) green:(160/255.0f) blue:(36/255.0f) alpha:1.0];
+}
+
+-(IBAction)doShare:(id)sender
+{
+    NSString *texttoshare = @"Hey! I just downloaded the app, Its amazing quiz app while driving. It tracks Car Parking info, and other important things. Would you like to download OnDrive Utitlities.";
+    UIActivityViewController *activityVc = nil;
+    WFActivitySpecificItemProvider *itemProvider1 = [[WFActivitySpecificItemProvider alloc]initWithPlaceholderItem:@{WFActivitySpecificItemProviderTypeDefault : texttoshare, UIActivityTypePostToFacebook : texttoshare, UIActivityTypePostToTwitter : texttoshare, UIActivityTypeMessage : texttoshare}];
+    
+    WFActivitySpecificItemProvider *itemProvider2 = [[WFActivitySpecificItemProvider alloc]initWithPlaceholderItem:nil block:^id(NSString *activityType) {
+        if ([activityType isEqualToString:@"net.whatsapp.WhatsApp.ShareExtension"]){
+            [activityVc dismissViewControllerAnimated:NO completion:nil];
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"net.whatsapp.WhatsApp.ShareExtension"]];
+        }
+        return texttoshare;
+    }];
+    
+    activityVc = [[UIActivityViewController alloc]initWithActivityItems:@[itemProvider1,itemProvider2] applicationActivities:nil];
+    
+    activityVc.excludedActivityTypes = @[UIActivityTypeAddToReadingList,UIActivityTypeCopyToPasteboard,UIActivityTypePostToFlickr,UIActivityTypePostToWeibo,UIActivityTypeAssignToContact,UIActivityTypePostToVimeo,UIActivityTypePostToTencentWeibo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypeAirDrop];
+    
+    [self presentViewController:activityVc animated:YES completion:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated

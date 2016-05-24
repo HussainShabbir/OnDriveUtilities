@@ -80,7 +80,14 @@
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" title="OnDrive Utilities" id="E0N-28-Q1Y"/>
+                    <navigationItem key="navigationItem" title="OnDrive Utilities" id="E0N-28-Q1Y">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="nWZ-N5-i3s">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="doShare:" destination="lOr-AY-I75" id="x3W-QM-oTr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <segue destination="8uD-PV-rdm" kind="show" identifier="ParkingTimerIdentifier" id="UHE-Wr-q9E"/>
