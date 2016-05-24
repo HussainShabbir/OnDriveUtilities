@@ -49,7 +49,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 -(void)doRateUs:(id)sender
 {
-    NSString *itunesAppUrl = @"itms-apps://itunes.apple.com/app/id1105328604";
+    NSString *itunesAppUrl = @"itms-apps://itunes.apple.com/us/app/drive-utilities/id1105328604";
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:itunesAppUrl]];
 }
 
@@ -83,7 +83,11 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)showHelp:(id)sender{
-    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"OnDrive Utilities" message:@"Car Parking\n It is use for tracking Parking information. In this you can add your parking location, so that it will be easy to find out your car\n\nParking Timer\nIt is use to set your parking timer, if there is any time limit to park your car then after setting this timer you will get the notifications once time will finished. This will help to avoid extra charge.\n\nGas Stations\nIt is use to find out the nearest gas stations. It will display the annotation on your map\n\nHospitals\nIt is use to find out the nearest Hospitals. It will display the annotation on your map\n\nRestaurants\nIt is use to find out the nearest Restaurants. It will display the annotation on your map\n\nHotels\nIt is use to find out the nearest Hotels. It will display the annotation on your map." preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Ok"style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    alertController.view.tintColor = [UIColor blackColor];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 -(IBAction)doShare:(id)sender
@@ -105,7 +109,7 @@ static NSString * const reuseIdentifier = @"Cell";
     activityVc = [[UIActivityViewController alloc]initWithActivityItems:@[itemProvider1,itemProvider2] applicationActivities:nil];
     
     activityVc.excludedActivityTypes = @[UIActivityTypeAddToReadingList,UIActivityTypeCopyToPasteboard,UIActivityTypePostToFlickr,UIActivityTypePostToWeibo,UIActivityTypeAssignToContact,UIActivityTypePostToVimeo,UIActivityTypePostToTencentWeibo,UIActivityTypePrint,UIActivityTypeSaveToCameraRoll,UIActivityTypeAirDrop];
-    
+    activityVc.view.tintColor = [UIColor blackColor];
     [self presentViewController:activityVc animated:YES completion:nil];
 }
 

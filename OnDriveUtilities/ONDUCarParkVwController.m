@@ -145,7 +145,7 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *reuseIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    cell.textLabel.text = [NSString stringWithFormat:@"Parking %ld", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"Parking %ld", (long)indexPath.row];
     cell.detailTextLabel.text = self.locations[indexPath.row];
     return cell;
 }

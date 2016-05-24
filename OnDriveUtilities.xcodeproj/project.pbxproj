@@ -276,7 +276,7 @@
 		976BB89B1CEB130100EC1430 /* ONDUTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUTimerViewController.m; sourceTree = "<group>"; };
 		976BB89D1CEB155A00EC1430 /* ONDUPkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONDUPkTableViewCell.h; sourceTree = "<group>"; };
 		976BB89E1CEB155A00EC1430 /* ONDUPkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONDUPkTableViewCell.m; sourceTree = "<group>"; };
-		978F3F2C1CE90357004C3DD7 /* OnDriveUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnDriveUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		978F3F2C1CE90357004C3DD7 /* Drive Utilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drive Utilities.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		978F3F301CE90357004C3DD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		978F3F321CE90357004C3DD7 /* ONDUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONDUAppDelegate.h; sourceTree = "<group>"; };
 		978F3F331CE90357004C3DD7 /* ONDUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONDUAppDelegate.m; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 		978F3F2D1CE90357004C3DD7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				978F3F2C1CE90357004C3DD7 /* OnDriveUtilities.app */,
+				978F3F2C1CE90357004C3DD7 /* Drive Utilities.app */,
 				978F3F451CE90357004C3DD7 /* OnDriveUtilitiesTests.xctest */,
 				978F3F501CE90357004C3DD7 /* OnDriveUtilitiesUITests.xctest */,
 			);
@@ -594,9 +594,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		978F3F2B1CE90357004C3DD7 /* OnDriveUtilities */ = {
+		978F3F2B1CE90357004C3DD7 /* Drive Utilities */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 978F3F591CE90357004C3DD7 /* Build configuration list for PBXNativeTarget "OnDriveUtilities" */;
+			buildConfigurationList = 978F3F591CE90357004C3DD7 /* Build configuration list for PBXNativeTarget "Drive Utilities" */;
 			buildPhases = (
 				978F3F281CE90357004C3DD7 /* Sources */,
 				978F3F291CE90357004C3DD7 /* Frameworks */,
@@ -606,9 +606,9 @@
 			);
 			dependencies = (
 			);
-			name = OnDriveUtilities;
+			name = "Drive Utilities";
 			productName = OnDriveUtilities;
-			productReference = 978F3F2C1CE90357004C3DD7 /* OnDriveUtilities.app */;
+			productReference = 978F3F2C1CE90357004C3DD7 /* Drive Utilities.app */;
 			productType = "com.apple.product-type.application";
 		};
 		978F3F441CE90357004C3DD7 /* OnDriveUtilitiesTests */ = {
@@ -687,7 +687,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				978F3F2B1CE90357004C3DD7 /* OnDriveUtilities */,
+				978F3F2B1CE90357004C3DD7 /* Drive Utilities */,
 				978F3F441CE90357004C3DD7 /* OnDriveUtilitiesTests */,
 				978F3F4F1CE90357004C3DD7 /* OnDriveUtilitiesUITests */,
 			);
@@ -866,12 +866,12 @@
 /* Begin PBXTargetDependency section */
 		978F3F471CE90357004C3DD7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 978F3F2B1CE90357004C3DD7 /* OnDriveUtilities */;
+			target = 978F3F2B1CE90357004C3DD7 /* Drive Utilities */;
 			targetProxy = 978F3F461CE90357004C3DD7 /* PBXContainerItemProxy */;
 		};
 		978F3F521CE90357004C3DD7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 978F3F2B1CE90357004C3DD7 /* OnDriveUtilities */;
+			target = 978F3F2B1CE90357004C3DD7 /* Drive Utilities */;
 			targetProxy = 978F3F511CE90357004C3DD7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -914,8 +914,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hussain Shabbir Hussain (286VQAS9G5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hussain Shabbir Hussain (286VQAS9G5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hussain Shabbir Hussain (WQF3745FDQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hussain Shabbir Hussain (WQF3745FDQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -937,7 +937,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "b060e15c-358a-4315-8c12-df6da07bcc6a";
+				PROVISIONING_PROFILE = "d582b799-28d3-4010-a17c-3df34e854db5";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -960,8 +960,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hussain Shabbir Hussain (286VQAS9G5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Hussain Shabbir Hussain (286VQAS9G5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hussain Shabbir Hussain (WQF3745FDQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hussain Shabbir Hussain (WQF3745FDQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -976,7 +976,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "b060e15c-358a-4315-8c12-df6da07bcc6a";
+				PROVISIONING_PROFILE = "d582b799-28d3-4010-a17c-3df34e854db5";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -986,12 +986,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hussain Shabbir Hussain (286VQAS9G5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hussain Shabbir Hussain (WQF3745FDQ)";
 				INFOPLIST_FILE = OnDriveUtilities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HussainCode.OnDriveUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b060e15c-358a-4315-8c12-df6da07bcc6a";
+				PROVISIONING_PROFILE = "d582b799-28d3-4010-a17c-3df34e854db5";
 			};
 			name = Debug;
 		};
@@ -999,12 +999,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hussain Shabbir Hussain (286VQAS9G5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hussain Shabbir Hussain (WQF3745FDQ)";
 				INFOPLIST_FILE = OnDriveUtilities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HussainCode.OnDriveUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b060e15c-358a-4315-8c12-df6da07bcc6a";
+				PROVISIONING_PROFILE = "d582b799-28d3-4010-a17c-3df34e854db5";
 			};
 			name = Release;
 		};
@@ -1066,7 +1066,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		978F3F591CE90357004C3DD7 /* Build configuration list for PBXNativeTarget "OnDriveUtilities" */ = {
+		978F3F591CE90357004C3DD7 /* Build configuration list for PBXNativeTarget "Drive Utilities" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				978F3F5A1CE90357004C3DD7 /* Debug */,

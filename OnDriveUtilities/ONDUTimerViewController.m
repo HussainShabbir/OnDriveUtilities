@@ -80,7 +80,7 @@
             __block NSInteger hours = (NSInteger)(duration/3600.0f);
             __block NSInteger minutes = ((NSInteger)duration - (hours * 3600))/60 -1;
             __block NSInteger second = 59;
-            __block NSString *timerLabel = [NSString stringWithFormat:@"%ld : %ld : %ld",hours,minutes,second];
+            __block NSString *timerLabel = [NSString stringWithFormat:@"%ld : %ld : %ld",(long)hours,(long)minutes,(long)second];
             timerCell.timerlabel.text = timerLabel;
             self.timer = CreateDispatchTimer(secondsToFire, queue, ^{
                 // Do something
@@ -101,7 +101,7 @@
                         [[UIApplication sharedApplication]cancelAllLocalNotifications];
                     }
                 }
-                timerLabel = [NSString stringWithFormat:@"%ld : %ld : %ld",hours,minutes,second];
+                timerLabel = [NSString stringWithFormat:@"%ld : %ld : %ld",(long)hours,(long)minutes,(long)second];
                 dispatch_async(dispatch_get_main_queue(),^{
                     timerCell.timerlabel.text = timerLabel;
                     if (!hours && !minutes && !second){
