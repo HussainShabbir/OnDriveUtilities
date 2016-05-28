@@ -31,7 +31,6 @@
 
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    NSLog(@"Alert");
     [[UIApplication sharedApplication]cancelLocalNotification:notification];
 }
 
