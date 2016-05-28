@@ -48,7 +48,8 @@
     switch (indexPath.row) {
         case 0:
             timerCell.timerView.hidden = YES;
-            timerCell.datePicker.date = [NSDate date];
+            timerCell.datePicker.countDownDuration = 60.0f;
+            timerCell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell = timerCell;
             break;
             
@@ -74,26 +75,20 @@
         {
             timerCell.timerView.hidden = NO;
             dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-            NSTimeInterval duration = timerCell.datePicker.countDownDuration;
+            __block NSTimeInterval duration = timerCell.datePicker.countDownDuration;
             [self scheduleReminder:duration];
+            __block NSInteger counter = (NSInteger)duration;
             double secondsToFire = 1.000f;
-            __block NSInteger hours = (NSInteger)(duration/3600.0f);
-            __block NSInteger minutes = ((NSInteger)duration - (hours * 3600))/60 -1;
-            __block NSInteger second = 59;
-            __block NSString *timerLabel = [NSString stringWithFormat:@"%ld : %ld : %ld",(long)hours,(long)minutes,(long)second];
-            timerCell.timerlabel.text = timerLabel;
+            __block NSInteger hours = (counter/3600.0f);
+            __block NSInteger minutes = (counter - (hours * 3600))/60;
+            __block NSInteger second = 0;
+            timerCell.timerlabel.text = [NSString stringWithFormat:@"%ld : %ld : %ld",(long)hours,(long)minutes,(long)second];
             self.timer = CreateDispatchTimer(secondsToFire, queue, ^{
-                // Do something
-                --second;
-                if (second == 0 && (minutes >= 1 || hours >= 1)){
-                    second = 59;
-                    --minutes;
-                    if (minutes == 0 && hours >= 1){
-                        minutes = 59;
-                        --hours;
-                    }
-                }
-                if (!hours && !minutes && !second)
+                --counter;
+                hours = (counter/3600.0f);
+                minutes = (counter - (hours * 3600))/60;
+                second = (counter - (minutes * 60));
+                if (!counter)
                 {
                     if (_timer)
                     {
@@ -101,9 +96,8 @@
                         [[UIApplication sharedApplication]cancelAllLocalNotifications];
                     }
                 }
-                timerLabel = [NSString stringWithFormat:@"%ld : %ld : %ld",(long)hours,(long)minutes,(long)second];
                 dispatch_async(dispatch_get_main_queue(),^{
-                    timerCell.timerlabel.text = timerLabel;
+                    timerCell.timerlabel.text = [NSString stringWithFormat:@"%ld : %ld : %ld",(long)hours,(long)minutes,(long)second];
                     if (!hours && !minutes && !second){
                         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Parking Reminder" message:@"Time is Over" preferredStyle:UIAlertControllerStyleAlert];
                         UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

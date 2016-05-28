@@ -49,7 +49,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 -(void)doRateUs:(id)sender
 {
-    NSString *itunesAppUrl = @"itms-apps://itunes.apple.com/us/app/drive-utilities/id1105328604";
+    NSString *itunesAppUrl = @"itms-apps://itunes.apple.com/us/app/drive-utilities/id1116906010?mt=8";
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:itunesAppUrl]];
 }
 
@@ -92,7 +92,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(IBAction)doShare:(id)sender
 {
-    NSString *texttoshare = @"Hey! I just downloaded the app, Its amazing app while driving. It tracks the Car Parking info, and other important things. Would you like to download OnDrive Utitlities.";
+    NSString *texttoshare = @"Hey! I just downloaded the app, Its amazing app while driving. It tracks the Car Parking info, and other important things. Would you like to download OnDrive Utitlities. Here is the link https://itunes.apple.com/us/app/drive-utilities/id1116906010";
     UIActivityViewController *activityVc = nil;
     WFActivitySpecificItemProvider *itemProvider1 = [[WFActivitySpecificItemProvider alloc]initWithPlaceholderItem:@{@"WFActivitySpecificItemProviderTypeDefault" : texttoshare, UIActivityTypePostToFacebook : texttoshare, UIActivityTypePostToTwitter : texttoshare, UIActivityTypeMessage : texttoshare}];
     

@@ -89,7 +89,7 @@
             CLLocation *destinationLoc = [[CLLocation alloc]initWithLatitude:plcMark.coordinate.latitude longitude:plcMark.coordinate.longitude];
             float distanceMeters = (float)[currentLocation distanceFromLocation:destinationLoc];
             float distanceMiles = (float)(distanceMeters / 1609.344);
-            ONDUMapAnnotation *annotation = [[ONDUMapAnnotation alloc]initWithTitle:plcMark.name withSubTitle:[NSString stringWithFormat:@"%.1f Miles",distanceMiles] withCoordinate:plcMark.coordinate];
+            ONDUMapAnnotation *annotation = [[ONDUMapAnnotation alloc]initWithTitle:plcMark.name withSubTitle:[NSString stringWithFormat:@"%.1f Miles",distanceMiles] withCoordinate:plcMark.coordinate withPlaceMarkTitle:plcMark.title andLocationName:nil];
             [self.mapVw addAnnotation:annotation];
         }
     }];

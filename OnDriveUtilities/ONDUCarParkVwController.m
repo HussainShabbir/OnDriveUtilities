@@ -13,9 +13,8 @@
 
 @interface ONDUCarParkVwController ()
 @property (nonatomic,strong) CLLocationManager *locationManager;
-@property (nonatomic,strong) MKPlacemark *placeMk;
 @property (nonatomic,strong) NSMutableArray *locations;
-@property (nonatomic,strong) NSString *location;
+@property (nonatomic,strong) ONDUMapAnnotation *annotation;
 @property (nonatomic,strong) NSUserDefaults *userDefaults;
 @end
 
@@ -28,7 +27,10 @@
     self.navigationItem.title = @"Car Parking";
     self.map.delegate =  self;
     self.userDefaults = [NSUserDefaults standardUserDefaults];
-    self.locations = [[self.userDefaults objectForKey:@"Locations"]mutableCopy];
+    NSData *decodeData = [self.userDefaults objectForKey:@"PlaceMark"];
+    if (decodeData != nil){
+        self.locations = [[NSKeyedUnarchiver unarchiveObjectWithData:decodeData]mutableCopy];
+    }
     if ([CLLocationManager locationServicesEnabled])
     {
         if (self.locationManager == nil )
@@ -54,24 +56,28 @@
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error == nil && [placemarks count] > 0) {
-            self.placeMk = [[MKPlacemark alloc]initWithPlacemark:placemarks.lastObject];
-            ONDUMapAnnotation *annotation = [[ONDUMapAnnotation alloc]initWithTitle:@"Park Here" withSubTitle:nil withCoordinate:currentLocation.coordinate];
-            [self.map addAnnotation:annotation];
-            self.location = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",
-                                 self.placeMk.subThoroughfare, self.placeMk.thoroughfare,
-                                 self.placeMk.postalCode, self.placeMk.locality,
-                                 self.placeMk.administrativeArea,
-                                 self.placeMk.country];
-            [self.map selectAnnotation:annotation animated:YES];
+            MKPlacemark *placeMk = [[MKPlacemark alloc]initWithPlacemark:placemarks.lastObject];
+            NSString *location = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@",
+                             placeMk.subThoroughfare, placeMk.thoroughfare,
+                             placeMk.postalCode, placeMk.locality,
+                             placeMk.administrativeArea,
+                             placeMk.country];
+            self.annotation = [[ONDUMapAnnotation alloc]initWithTitle:@"Park Here" withSubTitle:nil withCoordinate:currentLocation.coordinate withPlaceMarkTitle:placeMk.title andLocationName:location];
+            [self.map addAnnotation:self.annotation];
+            [self.map selectAnnotation:self.annotation animated:YES];
         }
-        else {
-            NSLog(@"%@", error.debugDescription);
+        else
+        {
+            [self showAlertWithTitle:@"Unavailable network" andMessage:@"Please check the network and relauch the app"];
+            return;
         }
     }];
-    
 }
 
 - (nullable MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
+    if (!self.annotation.locationName){
+        return nil;
+    }
     NSString *reuseIdentifier = @"Pin";
     MKPinAnnotationView *pinView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
     if (pinView != nil){
@@ -97,33 +103,42 @@
 }
 
 
--(void)insertNewObject:(id)sender
-{
-    BOOL isInsertedObj = NO;
-    if (!_locations){
-        self.locations = [NSMutableArray array];
+-(void)insertNewObject:(id)sender{
+    if (!self.locations){
+        self.locations = [NSMutableArray arrayWithCapacity:0];
     }
-    if (!self.locations.count){
-        if (_location){
-            isInsertedObj = YES;
+    if (![self.annotation isLocationAvailable:self.locations]){
+        @try {
+            [self.locations addObject:_annotation];
+            [self encodeLocation];
+            [self.tableView beginUpdates];
+            [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:(self.locations.count) ? (self.locations.count-1) : 0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView endUpdates];
+        }
+        @catch (NSException *exception) {
+            [self showAlertWithTitle:@"Ivalid Data" andMessage:@"Location cannot be added"];
         }
     }
     else{
-        for (NSString *loc in _locations){
-            if (![loc isEqualToString:_location]){
-                isInsertedObj = YES;
-            }
-        }
-    }
-    if (isInsertedObj){
-        [self.locations addObject:_location];
-        [self.userDefaults setObject:_locations forKey:@"Locations"];
-        [self.userDefaults synchronize];
-        [self.tableView beginUpdates];
-        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-        [self.tableView endUpdates];
+        [self showAlertWithTitle:@"Location already Exist" andMessage:@"Please check on the table"];
     }
 }
+
+-(void)encodeLocation
+{
+    NSData *enCodedData = [NSKeyedArchiver archivedDataWithRootObject:_locations];
+    [self.userDefaults setObject:enCodedData forKey:@"PlaceMark"];
+    [self.userDefaults synchronize];
+}
+
+-(void)showAlertWithTitle:(NSString*)title andMessage:(NSString*)msg{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:alertAction];
+    alertController.view.tintColor = [UIColor blackColor];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -146,13 +161,14 @@
     NSString *reuseIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     cell.textLabel.text = [NSString stringWithFormat:@"Parking %ld", (long)indexPath.row];
-    cell.detailTextLabel.text = self.locations[indexPath.row];
+    ONDUMapAnnotation *currentAnnotation = self.locations[indexPath.row];
+    cell.detailTextLabel.text = currentAnnotation.locationName;
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    MKMapItem *mapItem = [[MKMapItem alloc]initWithPlacemark:self.placeMk];
-    [MKMapItem openMapsWithItems:@[mapItem] launchOptions:@{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking,MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeTransit}];
+    ONDUMapAnnotation *selectedAnnotation = self.locations[indexPath.row];
+    [MKMapItem openMapsWithItems:@[selectedAnnotation.mapItem] launchOptions:@{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking,MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeTransit}];
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -163,8 +179,9 @@
     if (self.locations.count > indexPath.row)
     {
         [self.locations removeObjectAtIndex:indexPath.row];
-        [self.userDefaults removeObjectForKey:@"Locations"];
-        [self.userDefaults synchronize];
+        
+        [self.userDefaults removeObjectForKey:@"PlaceMark"];
+        [self encodeLocation];
     }
     [self.tableView beginUpdates];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
