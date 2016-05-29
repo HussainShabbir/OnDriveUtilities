@@ -83,11 +83,12 @@
             __block NSInteger minutes = (counter - (hours * 3600))/60;
             __block NSInteger second = 0;
             timerCell.timerlabel.text = [NSString stringWithFormat:@"%ld : %ld : %ld",(long)hours,(long)minutes,(long)second];
+            second = 60;
             self.timer = CreateDispatchTimer(secondsToFire, queue, ^{
                 --counter;
+                --second;
                 hours = (counter/3600.0f);
                 minutes = (counter - (hours * 3600))/60;
-                second = (counter - (minutes * 60));
                 if (!counter)
                 {
                     if (_timer)
@@ -98,6 +99,9 @@
                 }
                 dispatch_async(dispatch_get_main_queue(),^{
                     timerCell.timerlabel.text = [NSString stringWithFormat:@"%ld : %ld : %ld",(long)hours,(long)minutes,(long)second];
+                    if (counter > 60 && !second){
+                        second = 60;
+                    }
                     if (!hours && !minutes && !second){
                         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Parking Reminder" message:@"Time is Over" preferredStyle:UIAlertControllerStyleAlert];
                         UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

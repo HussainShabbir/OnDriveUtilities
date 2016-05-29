@@ -68,7 +68,7 @@
         }
         else
         {
-            [self showAlertWithTitle:@"Unavailable network" andMessage:@"Please check the network and relauch the app"];
+            [self showAlertWithTitle:@"Unavailable network" andMessage:@"Please check the network and relaunch the app"];
             return;
         }
     }];
